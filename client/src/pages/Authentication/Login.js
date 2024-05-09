@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import Avatar from "@mui/material/Avatar";
-
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
 import Link from "@mui/material/Link";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
@@ -49,7 +46,8 @@ export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
   // Function to validate email
   const validateEmail = () => {
-    const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+    const emailRegex = /^[\w.-]+@([\w-]+\.)+[\w-]{2,4}$/g;
+
     const isValidEmail = emailRegex.test(formData.email);
 
     setFormData({

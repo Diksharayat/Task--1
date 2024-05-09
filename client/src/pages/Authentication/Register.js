@@ -17,9 +17,8 @@ import { toast } from "react-toastify";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import IconButton from "@mui/material/IconButton";
-import OutlinedInput from "@mui/material/OutlinedInput";
 import InputAdornment from "@mui/material/InputAdornment";
-import { FormControl, InputLabel } from "@mui/material";
+
 
 function Register() {
   const defaultTheme = createTheme();
@@ -52,7 +51,8 @@ function Register() {
   };
 
   const validateEmail = () => {
-    const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g
+    const emailRegex = /^[\w.-]+@([\w-]+\.)+[\w-]{2,4}$/g;
+
     const isValidEmail = emailRegex.test(formData.email);
 
     setFormData({
