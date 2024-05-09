@@ -44,7 +44,7 @@ async function sendEmail(req, res) {
   const mailOption = {
     to: email,
     subject: "Your Reset password link",
-    html: `Click on the link to reset password <a href="http://localhost:3000/reset">http://localhost:3000/reset-password</a>.`,
+    html: `Click on the link to reset password <a href="https://663cbd379cf95b0008cf2fe9--kaleidoscopic-speculoos-b05829.netlify.app/reset-password">https://663cbd379cf95b0008cf2fe9--kaleidoscopic-speculoos-b05829.netlify.app/reset-password</a>.`,
   };
 
   try {
