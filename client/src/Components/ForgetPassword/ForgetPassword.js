@@ -135,7 +135,7 @@ const ForgotPassword = () => {
   const [sendEmail]=useForgotPasswordMutation({});
   const [formData, setFormData] = useState({
     email: "",
-   
+    isValidEmail: true,
   });
 
   const handleInputChange = (e) => {
@@ -146,15 +146,16 @@ const ForgotPassword = () => {
     });
   };
 
-  // const validateEmail = () => {
-  //   const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
-  //   const isValidEmail = emailRegex.test(formData.email);
+  const validateEmail = () => {
+    const emailRegex =/^[\w.-]+@([\w-]+\.)+[\w-]{2,4}$/g;
+    const isValidEmail = emailRegex.test(formData.email);
 
-  //   setFormData({
-  //     ...formData,
+    setFormData({
+      ...formData,
+      isValidEmail: isValidEmail,
      
-  //   });
-  // };
+    });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -199,7 +200,7 @@ const ForgotPassword = () => {
              id="email"
              label="Email Address"
              name="email"
-            //  onBlur={validateEmail}
+             onBlur={validateEmail}
              onChange={handleInputChange}
              error={!formData.isValidEmail}
              helperText={!formData.isValidEmail ? "Invalid email format" : ""}
