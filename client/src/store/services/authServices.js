@@ -14,7 +14,7 @@ export const authApi = createApi({
   keepUnusedDataFor: 0,
   refetchOnReconnect: true,
   baseQuery: AxiosBaseQuery({
-    baseUrl: `http://localhost:10000/users`,
+    baseUrl: `https://backend-five-henna.vercel.app/users`,
   }),
   endpoints: (builder) => ({
     register: builder.mutation({
