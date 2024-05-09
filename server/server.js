@@ -12,7 +12,10 @@ require("./config/dbConnect");
 
 // Middleware
 app.use(bodyParser.json());
-
+app.get('/', (req, res) => {
+  console.log(req.useragent)
+  res.send('Hey this is my API running 🥳')
+})
 
 
 app.use(cors()) // Use this after the variable declaration
