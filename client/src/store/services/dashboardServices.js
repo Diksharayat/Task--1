@@ -7,7 +7,7 @@ export const dashboardApi = createApi({
   keepUnusedDataFor: 0,
   refetchOnReconnect: true,
   baseQuery: AxiosBaseQuery({
-    baseUrl: `http://localhost:3002/dashboard`,
+    baseUrl: `http://localhost:10000/dashboard`,
   }),
   endpoints: (builder) => ({
     getUserData: builder.query({
