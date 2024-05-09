@@ -34,7 +34,7 @@ app.use("/dashboard",dashboardRoute);
 
 
 //listen to the server.
-const port = process.env.PORT||3002;
+const port = process.env.PORT||10000;
 app.listen(port,console.log(`SERVER IS UP AND RUNNING ON PORT ${port}`));
 
 
