@@ -165,7 +165,7 @@ const ForgotPassword = () => {
       };
       const response = await sendEmail(payload);
       if (response.data.status === "success") {
-        toast.success("Click on the Link to reset your password");
+        toast.success("please check your email to reset your password");
       } else {
         console.error("Email not sent");
         toast.error(response.data.message);
@@ -218,7 +218,7 @@ const ForgotPassword = () => {
           <Divider sx={{ marginTop: "50px" }} />
           <Grid container justifyContent="flex-start">
             <Grid item sx={{marginTop:"15px"}}>
-              <Link to="/login" variant="body2">
+              <Link to="/" variant="body2">
                 Remember your password?
               </Link>
             </Grid>

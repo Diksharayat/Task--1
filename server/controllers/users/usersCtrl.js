@@ -38,30 +38,28 @@ async function sendOTPByEmail(email, otp) {
     throw new Error("Failed to send OTP: " + error.message);
   }
 }
-
 // Function to send reset password email
-async function sendEmail(req,res){
+async function sendEmail(req, res) {
   const { email } = req.body;
-  const mailOption={
+  const mailOption = {
     to: email,
     subject: "Your Reset password link",
-    text: `Click on the link to reset password http://localhost:3000/forget-password. `,
+    html: `Click on the link to reset password <a href="http://localhost:3000/reset">http://localhost:3000/reset-password</a>.`,
   };
 
-
   try {
-    const info=await transporter.sendMail(mailOption);
-    console.log("Reset password set successfully", info.response);
+    const info = await transporter.sendMail(mailOption);
+    console.log("Reset password email sent successfully", info.response);
     res.json({
       status: "success",
-      message: "email sent successfully",
+      message: "Email sent successfully",
     });
   } catch (error) {
     console.error("Error sending email:", error.message);
     throw new Error("Failed to send email: " + error.message);
   }
-
 }
+
 
 
 
