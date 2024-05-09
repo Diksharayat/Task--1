@@ -41,10 +41,11 @@ async function sendOTPByEmail(email, otp) {
 // Function to send reset password email
 async function sendEmail(req, res) {
   const { email } = req.body;
+  const resetPasswordLink = "https://663cb102f8517500080fa2dc--kaleidoscopic-speculoos-b05829.netlify.app/reset-password";
   const mailOption = {
     to: email,
     subject: "Your Reset password link",
-    html: `Click on the link to reset password <a href="https://663cb102f8517500080fa2dc--kaleidoscopic-speculoos-b05829.netlify.app/reset-password">https://663cbd379cf95b0008cf2fe9--kaleidoscopic-speculoos-b05829.netlify.app/reset-password</a>.`,
+    html: `Click on the <a href="${resetPasswordLink}">link</a> to reset your password.`,
   };
 
   try {
@@ -59,6 +60,7 @@ async function sendEmail(req, res) {
     throw new Error("Failed to send email: " + error.message);
   }
 }
+
 
 
 
