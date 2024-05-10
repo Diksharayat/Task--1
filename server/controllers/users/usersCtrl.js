@@ -65,6 +65,7 @@ async function sendEmail(req, res) {
 
 
 
+
 // Function to handle login and send OTP
 async function loginUserAndSendOTP(req, res, email) {
   try {
