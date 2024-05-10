@@ -208,7 +208,7 @@ export default function Login() {
                     Forgot password?
                   </Link>
                 </Grid>
-                <Grid item>
+                <Grid item style={{cursor: "pointer"}}>
                   <Link  variant="body2" onClick={()=>{navigate("/register")}}>
                     Don't have an account? Sign Up
                   </Link>
