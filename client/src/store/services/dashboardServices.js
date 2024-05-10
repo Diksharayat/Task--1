@@ -7,7 +7,7 @@ export const dashboardApi = createApi({
   keepUnusedDataFor: 0,
   refetchOnReconnect: true,
   baseQuery: AxiosBaseQuery({
-    baseUrl: `http://localhost:10000/dashboard`,
+    baseUrl: `https://backend-five-henna.vercel.app/dashboard`,
   }),
   endpoints: (builder) => ({
     getUserData: builder.query({
